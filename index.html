@@ -27,19 +27,12 @@
               </div>
             </div>
           </fieldset>
-          <!--{{ index }}
-            {{ item.user }}
-            {{ item.body }}
-            {{ item.updated_at }}-->
         </li>
       </ul>
       <div align="center">
         <a class="layui-btn" href="https://github.com/JRT-FOREVER/JRT-discuss/issues/new">新建帖子</a>
       </div>
     </div>
-
-
-
 
 
 
@@ -53,37 +46,31 @@
 
 
 <script>
+api_url = "https://api.github.com/repos/JRT-FOREVER/JRT-discuss/issues"
+
 var app = new Vue({
   el: '#discuss',
   data: {
-    items: [
-      { message: 'Foo' },
-      { message: 'Bar' }
-    ]
+    items: []
   },
 
   methods: {
-    messageaa: function () {
-      xmlhttp=new XMLHttpRequest()
-      xmlhttp.onreadystatechange=function()
-      {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-          {
-            app.items=JSON.parse(xmlhttp.responseText)
-            //items=JSON.parse(xmlhttp.responseText)
-            //document.getElementById("myDiv").innerHTML=items[0].body
-            //alert(items[0].body)
-            //this.parentMessage=items[0].body
-          }
-      }
-      xmlhttp.open("GET","https://api.github.com/repos/JRT-FOREVER/JRT-discuss/issues",true)
-        //xmlhttp.open("GET","https://api.github.com/repos/JRT-FOREVER/JRT-discuss/issues/comments",true)
-        xmlhttp.send()
-      //this.items = xmlhttp.responseText
+    getTopic: function () {
+      axios.get(api_url)
+      .then(function (response) {
+        //console.log(response)
+        app.items = response.data
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
     }
+
   }
 })
-app.messageaa()
+
+app.getTopic()
+
 </script>
 
   </body>
