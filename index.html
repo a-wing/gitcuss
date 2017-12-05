@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css"  media="screen,projection"/>
 
@@ -9,40 +10,69 @@
   </head>
 
   <body>
-    <h1>Hello World</h1>
-    <a class="waves-effect waves-light btn">button</a>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Disscuss</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>
 
     <div id="discuss">
       <blockquote class="layui-elem-quote">如果我有一天能见到JavaScript的开发者，我一定会fuckfuckfuckfuck T</blockquote>
 
-      <ul>
-        <li v-for="(item, index) in items">
-          <fieldset class="layui-elem-field">
-            <legend><a v-bind:href="[ item.html_url ]" >{{ item.title }}</a></legend>
-            <div class="layui-field-box">
-              {{ item.body }}
-              <div align="right">
-                <div><i class="layui-icon">&#xe611;</i>{{ item.comments }}</div>
-                <div>{{ item.updated_at }}</div>
+        <div v-for="(item, index) in items">
+
+
+          <div class="col s12 m7">
+            <h4 class="header">{{ item.title }}</h4>
+            <div class="card horizontal">
+              <div class="card-image">
+                <img height=100 width="100" v-bind:alt="[ item.user.login + ' avatar' ] " v-bind:src="[ item.user.avatar_url ]">
+              </div>
+              <div class="card-stacked">
+                <div class="card-content">
+                  <p>{{ item.body }}</p>
+                </div>
+                <div class="card-action">
+                  {{ item.updated_at }}
+                  <a href="#">This is a link</a>
+                </div>
               </div>
             </div>
-          </fieldset>
-        </li>
-      </ul>
-      <div align="center">
-        <a class="layui-btn" href="https://github.com/JRT-FOREVER/JRT-discuss/issues/new">新建帖子</a>
+          </div>
+        </div>
+
+    <div align="center">
+      <a class="waves-effect waves-light btn" href="https://github.com/JRT-FOREVER/JRT-discuss/issues/new">新建帖子</a>
       </div>
     </div>
 
 
 
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
+<script>
+$(".button-collapse").sideNav();
+
+</script>
 
 
-    <script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
-    <script type="text/javascript" src="node_modules/axios/dist/axios.js"></script>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript" src="node_modules/axios/dist/axios.js"></script>
 
 
 <script>
