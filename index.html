@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="./node_modules/materialize-css/dist/css/materialize.min.css"  media="screen,projection"/>
 
@@ -29,8 +29,9 @@
       </ul>
     </div>
   </nav>
-
+<div class="container">
     <div id="discuss">
+
       <blockquote class="layui-elem-quote">如果我有一天能见到JavaScript的开发者，我一定会fuckfuckfuckfuck T</blockquote>
 
         <div v-for="(item, index) in items">
@@ -48,12 +49,13 @@
                 </div>
                 <div class="card-action">
                   {{ item.updated_at }}
-                  <a href="#">This is a link</a>
+                  <a href="#">{{ item.home_url }}</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
+    </div>
 
     <div align="center">
       <a class="waves-effect waves-light btn" href="https://github.com/JRT-FOREVER/JRT-discuss/issues/new">新建帖子</a>
