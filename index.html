@@ -32,20 +32,20 @@
 <div class="container">
     <div id="discuss">
 
-      <blockquote class="layui-elem-quote">如果我有一天能见到JavaScript的开发者，我一定会fuckfuckfuckfuck T</blockquote>
+      <blockquote>如果我有一天能见到JavaScript的开发者，我一定会fuckfuckfuckfuck T</blockquote>
 
         <div v-for="(item, index) in items">
 
 
           <div class="col s12 m7">
-            <h4 class="header">{{ item.title }}</h4>
             <div class="card horizontal">
               <div class="card-image">
-                <img height=100 width="100" v-bind:alt="[ item.user.login + ' avatar' ] " v-bind:src="[ item.user.avatar_url ]">
+                <img height=150 width="150" v-bind:alt="[ item.user.login + ' avatar' ] " v-bind:src="[ item.user.avatar_url ]">
               </div>
               <div class="card-stacked">
                 <div class="card-content">
-                  <p>{{ item.body }}</p>
+                  <h5 class="header">{{ item.title }}</h5>
+                  <blockquote>{{ item.body }}</blockquote>
                 </div>
                 <div class="card-action">
                   {{ item.updated_at }}
