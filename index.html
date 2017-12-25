@@ -36,24 +36,26 @@
 
         <div v-for="(item, index) in items">
 
-
-          <div class="col s12 m7">
-            <div class="card horizontal">
-              <div class="card-image">
-                <img height=150 width="150" v-bind:alt="[ item.user.login + ' avatar' ] " v-bind:src="[ item.user.avatar_url ]">
-              </div>
-              <div class="card-stacked">
-                <div class="card-content">
-                  <h5 class="header">{{ item.title }}</h5>
-                  <blockquote>{{ item.body }}</blockquote>
+        <a v-bind:href="[item.html_url]">{{ item.home_url }}
+          <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="card-panel grey lighten-5 z-depth-1">
+              <div class="row valign-wrapper">
+                <div class="col s2">
+                  <img v-bind:src="[ item.user.avatar_url ]" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
                 </div>
-                <div class="card-action">
+                <div class="col s10">
+                  <span class="black-text">
+                    <h5 class="header">{{ item.title }}</h5>
+                    <blockquote>{{ item.body }}</blockquote>
                   {{ item.updated_at }}
-                  <a href="#">{{ item.home_url }}</a>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
+        </a>
+
+
         </div>
     </div>
 
