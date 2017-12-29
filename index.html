@@ -78,6 +78,7 @@ $(".button-collapse").sideNav()
 
 
 <script>
+api_url = ""
 
 var topmenu = new Vue({
   el: '#menu',
@@ -92,6 +93,9 @@ var topmenu = new Vue({
         //console.log(response)
         topmenu.config = response.data
         topm.config = response.data
+
+        api_url = response.data.api_url
+        app.getTopic()
       })
       .catch(function (error) {
         console.log(error)
@@ -112,7 +116,7 @@ var topm = new Vue({
 topmenu.getMenu()
 
 
-api_url = "https://api.github.com/repos/JRT-FOREVER/JRT-discuss/issues"
+//api_url = "https://api.github.com/repos/JRT-FOREVER/JRT-discuss/issues"
 
 var app = new Vue({
   el: '#discuss',
@@ -135,7 +139,6 @@ var app = new Vue({
   }
 })
 
-app.getTopic()
 
 </script>
 

@@ -1,8 +1,9 @@
 {
+  "api_url": "https://api.github.com/repos/a-wing/gitcuss/issues",
   "menu": [
-    {"name": "Link1", "href": "github.com"},
-    {"name": "Link2", "href": "github.com"},
-    {"name": "Link3", "href": "github.com"}
+    {"name": "Index", "href": "http://github.com/a-wing/gitcuss"},
+    {"name": "Author", "href": "http://a-wing.top"},
+    {"name": "Github", "href": "http://github.com/a-wing"}
   ]
 }
 
