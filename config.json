@@ -1,0 +1,8 @@
+{
+  "menu": [
+    {"name": "Link1", "href": "github.com"},
+    {"name": "Link2", "href": "github.com"},
+    {"name": "Link3", "href": "github.com"}
+  ]
+}
+
