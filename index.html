@@ -54,12 +54,12 @@
 
 
         </div>
-    </div>
 
     <div align="center">
-      <a class="waves-effect waves-light btn" href="https://github.com/JRT-FOREVER/JRT-discuss/issues/new">新建帖子</a>
-      </div>
+      <a class="waves-effect waves-light btn" v-bind:href="['https://github.com/' + name +'/' + repo + '/issues/new']">新建帖子</a>
     </div>
+    </div>
+   </div>
 
 
 
@@ -96,6 +96,8 @@ var topmenu = new Vue({
 
         api_url = response.data.api_url
         app.getTopic()
+        app.name = response.data.name
+        app.repo = response.data.repo
       })
       .catch(function (error) {
         console.log(error)
