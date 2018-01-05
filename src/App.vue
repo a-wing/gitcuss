@@ -1,22 +1,28 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <mu-flat-button label="Secondary" class="demo-flat-button" secondary/>
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <mu-appbar title="Title">
+      <mu-icon-button icon="menu" slot="left"/>
+      <mu-flat-button label="expand_more" slot="right"/>
+      <mu-icon-button icon="expand_more" slot="right"/>
+    </mu-appbar>
+
+
+    <mu-card>
+      <mu-card-header title="Myron Avatar" subTitle="sub title">
+        <mu-avatar src="/images/uicon.jpg" slot="avatar"/>
+      </mu-card-header>
+      <mu-card-title title="Content Title" subTitle="Content Title"/>
+      <mu-card-text>
+        散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。
+        调皮的阳光掀动了四月的心帘，温暖如约的歌声渐起。
+        似乎在诉说着，我也可以在漆黑的角落里，找到阴影背后的阳光，
+        找到阳光与阴影奏出和谐的旋律。我要用一颗敏感赤诚的心迎接每一缕滑过指尖的阳光！
+      </mu-card-text>
+      <mu-card-actions>
+        <mu-flat-button label="Action 1"/>
+        <mu-flat-button label="Action 2"/>
+      </mu-card-actions>
+    </mu-card>
   </div>
 </template>
 
@@ -32,28 +38,6 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
 
 a {
   color: #42b983;
