@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <mu-flat-button label="Secondary" class="demo-flat-button" secondary/>
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
