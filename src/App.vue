@@ -7,8 +7,7 @@
     </div>
     <div class="content">
       <div class="body">
-        <button v-on:click="getTopic"> </button>
-        <mu-sub-header>阳光</mu-sub-header>
+        <mu-sub-header>Disscuss</mu-sub-header>
         <mu-content-block>
           如果我有一天能见到JavaScript的开发者 我一定会fuckfuckfuckfuck ta
         </mu-content-block>
@@ -20,7 +19,7 @@
               <mu-row gutter>
                 <mu-col width="100" tablet="30" desktop="20">
                   <mu-card-header v-bind:title="item.user.login" v-bind:subTitle="item.updated_at">
-                    <mu-avatar size="80" v-bind:src="item.user.avatar_url" slot="avatar"/>
+                    <mu-avatar :size="80" v-bind:src="item.user.avatar_url" slot="avatar"/>
                   </mu-card-header>
                 </mu-col>
                 <mu-col width="100" tablet="60" desktop="80">
@@ -47,15 +46,14 @@ let api_url = "https://api.github.com/repos/JRT-FOREVER/JRT-discuss/issues"
 export default {
   data () {
     return {
-      items: [],
-      aaa: "AAAAAAAAAAAAAAAAA",
-      activeTab: 'tab1'
+      items: []
     }
   },
+  mounted: function () {
+    console.log("2333333333333")
+    this.getTopic()
+  },
   methods: {
-    handleTabChange (val) {
-      this.activeTab = val
-    },
     getTopic: function () {
       //axios.get(api_url)
       var _this = this
