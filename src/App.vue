@@ -5,6 +5,7 @@
       <mu-flat-button label="expand_more" slot="right"/>
       <mu-icon-button icon="expand_more" slot="right"/>
     </mu-appbar>
+    <h1>{{ msg }}</h1>
 
 
     <mu-card>
@@ -32,6 +33,11 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  tt () {
+    return {
+      aa: 'DDDDDDDDDDDDDDDD'
     }
   }
 }
