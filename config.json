@@ -1,0 +1,11 @@
+{
+  "api_url": "https://api.github.com/repos/a-wing/gitcuss/issues",
+  "name": "a-wing",
+  "repo": "gitcuss",
+  "menu": [
+    {"name": "Index", "href": "http://github.com/a-wing/gitcuss"},
+    {"name": "Author", "href": "http://a-wing.top"},
+    {"name": "Github", "href": "http://github.com/a-wing"}
+  ]
+}
+
