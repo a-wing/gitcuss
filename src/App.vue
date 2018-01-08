@@ -41,23 +41,47 @@
   </div>
 </template>
 <script>
-let api_url = "https://api.github.com/repos/JRT-FOREVER/JRT-discuss/issues"
+//let api_url = "https://api.github.com/repos/JRT-FOREVER/JRT-discuss/issues"
 
 export default {
   data () {
     return {
+      config: {},
       items: []
     }
   },
   mounted: function () {
     console.log("2333333333333")
+    //this.route.path
+    //router.currentRoute
+    this.getConfig()
     this.getTopic()
   },
   methods: {
+    getConfig: function () {
+      console.log(location.href)
+      console.log(location.href.split(":"))
+
+      let url = location.href
+      //let url = "https://jrt-forever.github.io/JRT-discuss/"
+
+      //console.log(url.split("/"))
+      let hostname = url.split("/")[2]
+
+      console.log(hostname.split(".")[0])
+      console.log(url.split("/")[3])
+
+      this.config.name = hostname.split(".")[0]
+      this.config.repo = url.split("/")[3]
+
+      this.config.api_url = "https://api.github.com/repos/" + this.config.name + "/" + this.config.repo + "/issues"
+      console.log(this.config.api_url)
+
+    },
     getTopic: function () {
       //axios.get(api_url)
       var _this = this
-      this.$ajax.get(api_url)
+      this.$ajax.get(this.config.api_url)
       .then(function (response) {
         //console.log(_this.aaa)
         //console.log(response.data)
