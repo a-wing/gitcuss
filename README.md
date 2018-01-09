@@ -6,13 +6,16 @@
 
 ``` bash
 # install dependencies
-npm install
+yarn install
 
 # serve with hot reload at localhost:8080
-npm run dev
+yarn run dev
 
 # build for production with minification
-npm run build
+yarn run build
+
+cp -r gitcuss/dist ./
+cp gitcuss/index.html ./
 ```
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
@@ -28,22 +31,7 @@ https://a-wing.github.io/gitcuss/
 https://jrt-forever.github.io/JRT-discuss/
 
 
-## Install
-
-#### if your not use github.io
-
-    git checkout -b gh-pages
-
-
----
-
-    git submodule add https://github.com/a-wing/gitcuss.git
-
-    ln -s gitcuss/index.html ./
-
-    cp gitcuss/config.json ./
-
 
 ## Todo
 
-* [ ] muse-UI rewirte
+* [x] muse-UI rewirte
