@@ -31,7 +31,9 @@
 
           </a>
         </div>
-
+        <div align="center">
+          <mu-flat-button label="发帖" @click="home" primary/>
+        </div>
       </div>
     </div>
     <div class="footer">
@@ -51,13 +53,16 @@ export default {
     }
   },
   mounted: function () {
-    console.log("2333333333333")
+    //console.log("2333333333333")
     //this.route.path
     //router.currentRoute
     this.getConfig()
     this.getTopic()
   },
   methods: {
+    home: function () {
+      location.href = "https://github.com/" + this.config.name + "/" + this.config.repo + "/issues"
+    },
     getConfig: function () {
       console.log(location.href)
       console.log(location.href.split(":"))
